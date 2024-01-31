@@ -4,7 +4,7 @@ import {AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar} from 'react-ic
 import { Product } from '../../components';
 import { useStateContext } from '../../context/StateContext';
 
-const productDetails = ({ product, products }) => {
+const ProductDetails = ({ product, products }) => {
     const { image, name, details, price } = product;
     const [index, setIndex] = useState(0);
     const { decQty, incQty, qty, onAdd } = useStateContext();
@@ -62,7 +62,7 @@ const productDetails = ({ product, products }) => {
                     </div>
                     <div className="buttons">
                         <button type='button' className='add-to-cart' onClick={() => onAdd(product, qty)}>Add to Cart</button>
-                        <button type='button' className='buy-now' onClick=''>Buy Now</button>
+                        <button type='button' className='buy-now'>Buy Now</button>
                     </div>
                 </div>
             </div>
@@ -112,4 +112,4 @@ export const getStaticProps = async ({ params: { slug } }) => {
     }
 }
 
-export default productDetails;
+export default ProductDetails;
